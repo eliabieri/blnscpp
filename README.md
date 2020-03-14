@@ -1,5 +1,5 @@
 # 🐈 blnscpp
-C++ API for the Big List of Naughty Strings https://github.com/minimaxir/big-list-of-naughty-strings
+Single header C++ API for the Big List of Naughty Strings https://github.com/minimaxir/big-list-of-naughty-strings
 
 Here's some examples:
 ```
