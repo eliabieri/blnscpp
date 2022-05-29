@@ -85,3 +85,7 @@ Makefile
 
 # VSC
 */settings.json
+
+#CLion
+.idea
+cmake-*

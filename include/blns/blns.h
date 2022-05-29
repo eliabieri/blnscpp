@@ -15,25 +15,17 @@ namespace blns
 class Blns
 {
 public:
-    Blns()
-        : blnsFile{std::filesystem::current_path() / ".." / ".." / "big-list-of-naughty-strings" / "blns.txt"}
-    {
-        std::copy(std::istream_iterator<std::string>(blnsFile),
-                  std::istream_iterator<std::string>(),
-                  std::back_inserter(blns));
-    }
+    Blns();
+
+    ~Blns() = default;
 
     /*
      * Returns the list of Naughty Strings
      * @return list of naugthy strings
      */
-    std::vector<std::string> const &getStrings()
-    {
-        return blns;
-    }
+    [[nodiscard]] std::vector<std::string> const &getStrings() const;
 
 private:
-    std::ifstream blnsFile;
     std::vector<std::string> blns;
 };
 
