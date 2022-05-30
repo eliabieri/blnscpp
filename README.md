@@ -16,21 +16,13 @@ Powerلُلُصّبُلُلصّبُررً ॣ ॣh ॣ ॣ冗
 Œ„´‰ˇÁ¨ˆØ∏”
 ```
 
-# Example Usage
-```c++
-#include "blns.h"
-#include <iostream>
-
-auto blns = blns::Blns{};
-for (auto const &ns : blns.getStrings()) {
-    std::cout << ns << "\n";
-}
-```
-
 # CMake Integration
 
 You can setup your CMake project to use BLNS using [CPM](https://github.com/cpm-cmake/CPM.cmake)
-(no need to download / clone this repo manually):
+(no need to download / clone this repo manually).
+
+Consider you want to add blns to a project called `myapp`. Here is what
+your CMakeLists.txt file looks like:
 
 ```cmake
 project("myapp")
@@ -49,9 +41,23 @@ With this setup, you can use blns like so in `myapp.cpp`:
 #include <iostream>
 
 int main() {
-    auto blns = blns::Blns{};
+    auto blns = blns::Blns();
     for (auto const &ns : blns.getStrings()) {
-        std::cout << ns << "\n";
+        std::cout << ns << std::endl;
     }
 }
+```
+
+# Local Build
+
+```bash
+mkdir build && cd build
+cmake ..
+cmake --build .
+```
+
+Run example :
+
+```bash
+./blns_example
 ```

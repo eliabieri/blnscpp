@@ -5,9 +5,10 @@
 
 blns::Blns::Blns() {
         std::ifstream blnsFile = std::filesystem::path(__FILE__).parent_path()
-                / ".." / ".." / "big-list-of-naughty-strings" / "blns.txt";
+                / ".." / ".." / "blns.txt";
 
-        // If this assertion fails, ensure that you have correctly initialized and updated the submodules for this repo
+        // If this assertion fails, ensure that you have correctly
+        // downloaded blns.txt at the root of the project during cmake build
         assert(blnsFile.is_open());
 
         std::string line;

@@ -89,3 +89,7 @@ Makefile
 #CLion
 .idea
 cmake-*
+build
+
+# Blns.txt downloaded file
+blns.txt
