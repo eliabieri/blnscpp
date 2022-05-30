@@ -6,4 +6,5 @@ int main() {
     {
         std::cout << ns << std::endl;
     }
+    return 0;
 }
