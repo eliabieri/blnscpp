@@ -28,7 +28,7 @@ your CMakeLists.txt file looks like:
 project("myapp")
 
 # Add BLNS cmake package
-CPMAddPackage("gh:Teskann/blnscpp#master")
+CPMAddPackage("gh:eliabieri/blnscpp#master")
 add_executable(${PROJECT_NAME} myapp.cpp)
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${blnscpp_SOURCE_DIR}/include)  # Add include path
