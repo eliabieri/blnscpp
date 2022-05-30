@@ -15,18 +15,17 @@ namespace blns
 class Blns
 {
 public:
-    Blns();
-
-    ~Blns() = default;
 
     /*
      * Returns the list of Naughty Strings
      * @return list of naugthy strings
      */
-    [[nodiscard]] std::vector<std::string> const &getStrings() const;
+    [[nodiscard]] static std::vector<std::string> const &getStrings() ;
 
 private:
-    std::vector<std::string> blns;
+    inline static std::vector<std::string> blns;
+
+    static void readFile();
 };
 
 }

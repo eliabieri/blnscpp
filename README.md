@@ -26,9 +26,10 @@ your CMakeLists.txt file looks like:
 
 ```cmake
 project("myapp")
-add_executable(${PROJECT_NAME} myapp.cpp)
 
-CPMAddPackage("gh:Teskann/blnscpp#master")  # Add this after add_executable / add_library, ...
+# Add BLNS cmake package
+CPMAddPackage("gh:Teskann/blnscpp#master")
+add_executable(${PROJECT_NAME} myapp.cpp)
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${blnscpp_SOURCE_DIR}/include)  # Add include path
 target_link_libraries(${PROJECT_NAME} PRIVATE lib_blns)  # Link the blns library
@@ -41,8 +42,8 @@ With this setup, you can use blns like so in `myapp.cpp`:
 #include <iostream>
 
 int main() {
-    auto blns = blns::Blns();
-    for (auto const &ns : blns.getStrings()) {
+    for (auto const &ns : blns::Blns::getStrings())
+    {
         std::cout << ns << std::endl;
     }
 }
