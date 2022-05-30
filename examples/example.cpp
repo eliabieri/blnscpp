@@ -1,11 +1,10 @@
-#include "blns.h"
+#include <blns/blns.h>
 #include <iostream>
 
-int main()
-{
-    auto blns = blns::Blns{};
-    for (auto const &ns : blns.getStrings())
+int main() {
+    for (auto const &ns : blns::Blns::getStrings())
     {
-        std::cout << ns << "\n";
+        std::cout << ns << std::endl;
     }
+    return 0;
 }

@@ -85,3 +85,11 @@ Makefile
 
 # VSC
 */settings.json
+
+#CLion
+.idea
+cmake-*
+build
+
+# Blns.txt downloaded file
+blns.txt
