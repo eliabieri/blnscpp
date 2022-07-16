@@ -1,6 +1,6 @@
 # BLNS CPP 🐈
 
-#### C++ API for the [Big List of Naughty Strings](https://github.com/minimaxir/big-list-of-naughty-strings)
+#### C++ API for the [Big List of Naughty Strings](https://github.com/minimaxir/big-list-of-naughty-strings).
 
 [](mdtoc)
 ## Table of Contents
@@ -11,7 +11,7 @@
 	* [What if I don't use CMake ? ⚠️](#what-if-i-dont-use-cmake--)
 * [Contribution 🌍](#contribution-)
 	* [How to contribute ?](#how-to-contribute-)
-	* [Debug 🪲](#debug-)
+	* [Debug : local build 🪲](#debug--local-build-)
 [](/mdtoc)
 
 ## Description 📃
@@ -25,11 +25,12 @@ This repository provides a C++ API to use this list, with a [CMake](https://cmak
 ## Features ⚡ 
 
 - :heavy_check_mark: CMake integration
+- :heavy_check_mark: Cross-platform
 - :heavy_check_mark: Latest version of BLNS.txt is downloaded automatically at every build
 - :heavy_check_mark: Uses only C++ STL and only C++ standards
 - :heavy_check_mark: Compatible with the latest C++ standards (C++23 included)
 - :heavy_check_mark: Example project provided in the repository
-- :heavy_check_mark: Tested, and the code contains C assertions to ensure your copy of the project works as expected
+- :heavy_check_mark: The implementation contains C assertions to ensure your copy of the project works as expected
 
 ## Usage : CMake Integration 🔨
 
@@ -57,7 +58,7 @@ With this setup, you can use blns like so in `myapp.cpp`:
 #include <iostream>
 
 int main() {
-    for (auto const &ns : blns::Blns::getStrings())
+    for (const auto &ns : blns::Blns::getStrings())
     {
         std::cout << ns << std::endl;
     }
@@ -79,15 +80,25 @@ If you don't want (of can't) use CMake, you can clone this repository or add it 
 
 Please, feel free to contribute to this project if you feel like it. You can report a bug / propose a feature [creating an issue](https://github.com/eliabieri/blnscpp/issues). If you want to submit your changes, please [fork the repository](https://github.com/eliabieri/blnscpp/fork) and create a pull request from your fork to the master branch.
 
-### Debug 🪲
+### Debug : local build 🪲
 
+Prerequisites:
+- [CMake](https://cmake.org/)
+
+First, clone the repository :
+```bash
+git clone https://github.com/eliabieri/blnscpp
+cd blnscpp
+```
+
+Then, build:
 ```bash
 mkdir build && cd build
 cmake ..
 cmake --build .
 ```
 
-Run example :
+Run the example :
 
 ```bash
 ./blns_example
