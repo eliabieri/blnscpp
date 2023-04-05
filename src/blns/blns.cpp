@@ -1,13 +1,15 @@
 #include <blns/blns.h>
 #include <cassert>
-#include <algorithm>
 #include <string>
+#include <fstream>
+#include <vector>
+#include <filesystem>
 
-std::vector<std::string> const &blns::Blns::getStrings() {
-    if(blns.empty()) {
+const std::vector<std::string>& blns::Blns::getStrings() {
+    if(s_blns.empty()) {
         readFile();
     }
-    return blns;
+    return s_blns;
 }
 
 void blns::Blns::readFile() {
@@ -21,9 +23,9 @@ void blns::Blns::readFile() {
     std::string line;
     while(getline(blnsFile, line)) {
         // Skip comments in txt file
-        if(line.rfind('#', 0) != 0) {
-            blns.push_back(line);
+        if(!line.empty() && line.rfind('#', 0) != 0) {
+            s_blns.push_back(line);
         }
     }
-    assert(!blns.empty());
+    assert(!s_blns.empty());
 }

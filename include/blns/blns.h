@@ -4,10 +4,9 @@
 *
 * @author Elia Bieri <bieri.elia@gmail.com>
 */
-#include <fstream>
-#include <iterator>
+
 #include <vector>
-#include <filesystem>
+#include <string>
 
 namespace blns
 {
@@ -18,12 +17,12 @@ public:
 
     /*
      * Returns the list of Naughty Strings
-     * @return list of naugthy strings
+     * @return list of naughty strings
      */
-    [[nodiscard]] static std::vector<std::string> const &getStrings() ;
+    [[nodiscard]] static const std::vector<std::string>& getStrings() ;
 
 private:
-    inline static std::vector<std::string> blns;
+    inline static std::vector<std::string> s_blns;
 
     static void readFile();
 };
